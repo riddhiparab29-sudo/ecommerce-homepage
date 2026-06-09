@@ -14,6 +14,9 @@ Currently, two official plugins are available:
 ## Contact Page
 ![Contact](src/components/images/contact.png)
 
+## Brands Section
+
+![Brands](src/components/images/Brands.png)
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
