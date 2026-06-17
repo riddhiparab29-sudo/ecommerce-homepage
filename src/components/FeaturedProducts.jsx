@@ -1,29 +1,40 @@
 
-    import { ProductCard } from "./ProductCard";
+    import { useState, useEffect } from "react";
+import { ProductCard } from "./ProductCard";
+import { supabase } from "../supabase";
 
 export function FeaturedProducts() {
+  const [products, setProducts] = useState([]);
+
+  const getProducts = async () => {
+    const { data, error } = await supabase
+      .from("products")
+      .select("*");
+
+    if (error) {
+      console.log(error);
+    } else {
+      setProducts(data);
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <section>
       <h2>Featured Products</h2>
 
       <div className="products">
-        <ProductCard
-          image="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
-          name="iPhone 16 Pro"
-          price="₹1,19,999"
-        />
-
-        <ProductCard
-          image="https://images.unsplash.com/photo-1496181133206-80ce9b88a853"
-          name="MacBook Air"
-          price="₹1,09,999"
-        />
-
-        <ProductCard
-          image="https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
-          name="Sony Headphones"
-          price="₹19,999"
-        />
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            image={product.image_url}
+            name={product.title}
+            price={product.price}
+          />
+        ))}
       </div>
     </section>
   );

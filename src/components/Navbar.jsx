@@ -4,6 +4,7 @@ export function Navbar() {
       <h1>TechVerse</h1>
 
       <ul className="nav-links">
+        <a href="/add-product">Add Product</a>
         <li>Home</li>
         <li>Products</li>
         <li>Deals</li>
