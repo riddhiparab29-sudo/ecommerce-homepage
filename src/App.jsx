@@ -8,8 +8,7 @@ import { Products } from "./pages/Products";
 import { DealsPage } from "./pages/DealsPage";
 import { Contact } from "./pages/Contact";
 import AddProduct from "./pages/AddProduct";
-
-<Route path="/add-product" element={<AddProduct />} />
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -17,13 +16,13 @@ function App() {
       <Navbar />
 
       <Routes>
-        
-<Route path="/add-product" element={<AddProduct />} />
-
+         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/deals" element={<DealsPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/add-product" element={<AddProduct />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
 
       <Footer />
@@ -32,4 +31,3 @@ function App() {
 }
 
 export default App;
-
